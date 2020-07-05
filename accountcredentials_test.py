@@ -1,4 +1,4 @@
-import unittest # Importing the unittest module
+import unittest 
 from accountcredential import Accountcredential 
 
 class TestAccountcredential(unittest.TestCase):
@@ -27,26 +27,26 @@ class TestAccountcredential(unittest.TestCase):
     def test_delete_accountcredential(self):
             
         self.new_accountcredential.save_accountcredential()
-        test_accountcredential = Accountcredential("Testaccount","Testusername","Testpassword") # new accountcredential
+        test_accountcredential = Accountcredential("Testaccount","Testusername","Testpassword")
         test_accountcredential.save_accountcredential()
 
-        self.new_accountcredential.delete_accountcredential()# Deleting a accountcredential object
+        self.new_accountcredential.delete_accountcredential()
         self.assertEqual(len(Accountcredential.accountcredential_list),1)
 
-    def test_find_by_number(self):
+    def test_find_by_username(self):
 
         self.new_accountcredential.save_accountcredential()
-        test_accountcredential = Accountcredential("Testaccount","Testusername","Testpassword") # new accountcredential
+        test_accountcredential = Accountcredential("Testaccount","Testusername","Testpassword") 
         test_accountcredential.save_accountcredential()
 
-        found_accountcredential = Accountcredential.find_by_number("Testaccount")
+        found_accountcredential = Accountcredential.find_by_username("Testaccount")
 
         self.assertEqual(found_accountcredential.email,test_accountcredential.email)
 
     def test_accountcredential_exists(self):
 
         self.new_accountcredential.save_accountcredential()
-        test_accountcredential = Accountcredential("Testaccount","Testusername","Testpassword") # new accountcredential
+        test_accountcredential = Accountcredential("Testaccount","Testusername","Testpassword") 
         test_accountcredential.save_accountcredential()
 
         accountcredential_exists = Accountcredential.accountcredential_exist("Testaccount")

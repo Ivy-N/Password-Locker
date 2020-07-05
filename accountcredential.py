@@ -9,12 +9,15 @@ class Accountcredential:
         self.username = username
         self.password = password
 
-    def save_accountcredentials(self):
+    def save_accountcredential(self):
         Accountcredential.accountcredential_list.append(self)
 
-    def delete_accountcredentials(self):
+    def delete_accountcredential(self):
 
       Accountcredential.accountcredential_list.remove(self)
+
+    def display_accountcredential(self):
+        Accountcredential.accountcredential_list.display(self)
 
     @classmethod
     def find_by_username(cls,account):
